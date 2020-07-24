@@ -1,18 +1,22 @@
 package com.maximum;
 
-public class MaximumProblem {
+public class MaximumProblem<E> {
 
-    Integer thirdValue;
-    Integer secondValue;
-    Integer firstValue;
+    E firstValue;
+    E secondValue;
+    E thirdValue;
 
-    public MaximumProblem(Integer firstValue, Integer secondValue, Integer thirdValue) {
+
+
+    public MaximumProblem(E firstValue,E secondValue, E thirdValue) {
         this.firstValue=firstValue;
         this.secondValue=secondValue;
         this.thirdValue=thirdValue;
     }
-    public Integer compareValues(){
-        Integer firstVal=firstValue;
+
+    
+    public static  <E extends Comparable<E>> E findMaximum(E firstValue,E secondValue,E thirdValue){
+        E firstVal=firstValue;
         if(secondValue.compareTo(firstVal)>0){
             firstVal=secondValue;
         }
@@ -20,9 +24,5 @@ public class MaximumProblem {
             firstVal=thirdValue;
         }
         return  firstVal;
-    }
-    public Object findMaximum() {
-        Object max=compareValues();
-        return max;
     }
 }
