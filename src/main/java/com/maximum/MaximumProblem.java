@@ -1,6 +1,6 @@
 package com.maximum;
 
-public class MaximumProblem<E> {
+public class MaximumProblem<E extends Comparable<E>> {
 
     E firstValue;
     E secondValue;
@@ -14,8 +14,8 @@ public class MaximumProblem<E> {
         this.thirdValue=thirdValue;
     }
 
-    
-    public static  <E extends Comparable<E>> E findMaximum(E firstValue,E secondValue,E thirdValue){
+
+    public static  <E extends Comparable<E>> E compareValue(E firstValue,E secondValue,E thirdValue){
         E firstVal=firstValue;
         if(secondValue.compareTo(firstVal)>0){
             firstVal=secondValue;
@@ -24,5 +24,8 @@ public class MaximumProblem<E> {
             firstVal=thirdValue;
         }
         return  firstVal;
+    }
+    public  E findMaximum(){
+        return compareValue(firstValue,secondValue,thirdValue);
     }
 }
