@@ -40,4 +40,22 @@ public class MaximumProblemTest {
         Object maximum = maximumProblem.findMaximum(1.2,1.3,1.4);
         Assert.assertEquals(1.4, maximum);
     }
+    @Test
+    public void toFind_Maximum_String_PassValue_InFirstParameter() {
+        MaximumProblem maximumProblem = new MaximumProblem("Peach","Apple","Banana");
+        Object maximum = maximumProblem.findMaximum("Peach","Apple","Banana");
+        Assert.assertEquals("Peach", maximum);
+    }
+    @Test
+    public void toFind_Maximum_String_PassValue_InSecondParameter() {
+        MaximumProblem maximumProblem = new MaximumProblem("Apple","Peach","Banana");
+        Object maximum = maximumProblem.findMaximum("Apple","Peach","Banana");
+        Assert.assertEquals("Peach", maximum);
+    }
+    @Test
+    public void toFind_Maximum_String_PassValue_InThirdParameter() {
+        MaximumProblem maximumProblem = new MaximumProblem("Apple","Banana","Peach");
+        Object maximum = maximumProblem.findMaximum("Apple","Banana","Peach");
+        Assert.assertEquals("Peach", maximum);
+    }
 }
