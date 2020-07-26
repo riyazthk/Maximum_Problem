@@ -12,7 +12,7 @@ public class MaximumProblemTest {
     }
     @Test
     public void toFind_Maximum_Number_PassValue_InSecondParameter() {
-        MaximumProblem maximumProblem = new MaximumProblem(2,4,3);
+        MaximumProblem maximumProblem = new MaximumProblem(2,4);
         Object maximum = maximumProblem.findMaximum();
         Assert.assertEquals(4, maximum);
     }
